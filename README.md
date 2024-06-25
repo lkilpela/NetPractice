@@ -10,3 +10,5 @@ https://42-cursus.gitbook.io/guide/rank-04/netpractice
 
 
 file:///Users/lumik/Downloads/net_practice/level6.html
+
+https://github.com/viruskizz/42bangkok-netpractice
