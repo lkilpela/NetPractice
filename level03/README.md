@@ -9,7 +9,7 @@
 ## Solution:
 
 ### Step 1: Determine Subnet Mask for A1 and B1
-- Since all devices must communicate with each other and C1 has a subnet mask of 255.255.255.128 (or /25 prefix), A1 and B1 must be in the same subnet. Therefore, A1 and B1 will also use a subnet mask of 255.255.255.128 and a prefix of /25.
+- Since all devices must communicate with each other and C1 has a subnet mask of `255.255.255.128` (or `/25` prefix), A1 and B1 must be in the same subnet. Therefore, A1 and B1 will also use a subnet mask of `255.255.255.128` and a prefix of `/25`.
 
 ### Step 2: Calculate Network Address
 - To ensure communication, all devices must be in the same network. The subnet mask of 255.255.255.128 (/25) divides the address space into 2 subnets, each with 128 addresses.

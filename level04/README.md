@@ -1,4 +1,4 @@
-## This level introduces the router.
+## This level introduces the ROUTER.
 
 A router is a device that forwards data packets between different networks, typically between a local network and the internet. It uses IP addresses to determine the best path for forwarding the packets.
 
