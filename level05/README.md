@@ -30,8 +30,34 @@ In networking, a route generally consists of two main parts:
 - Same for Client B's packets, the next hop IP address is `166.155.236.254`.
 
 ### Step 4: Configuring the subnet mask and IP address for Interface A1 & B1
-- Since all devices must communicate with each other and Interface R2 has a subnet mask of `255.255.192.0` (or `/18` prefix), A1 and B1 must be in the same subnet.
-- Router's Interface R2 has IP address `166.155.236.254`
+- Interface B1 need to communicate with Interface R2. 
+    - R2 has a subnet mask of `255.255.192.0` (or `/18` prefix), B1 and R2 must be in the same subnet.
+    - Router's Interface R2 has IP address `166.155.236.254`
+    - Usable IP range: `166.155.192.1 - 166.155.255.254`.
+
+- Interface A1 need to communicate with Interface R1. 
+    - R2 has a subnet mask of `255.255.255.128` (or `/25` prefix), B1 and R2 must be in the same subnet.
+    - Router's Interface R2 has IP address `97.175.35.126`
+    - Usable IP range: `97.175.35.1 - 97.175.35.125`.
+
+
+#### Calculation:
+Subnet mask: 255.255.192.0. Focus on the octet where subnetting occurs, which is the third octet in this case (192).
+
+- Block size: `256 - 192 = 0`.
+blocks in the third octet start at multiples of 64 (0, 64, 128, 192, etc.).
+- To find the starting point of the block for a given IP address, divide the third octet by the block size (64) and then multiply back by 64 to get the lower boundary.
+- For an IP address `166.155.236.254`, the third octet is `236`.
+- Calculate the starting block: 
+`(236 / 64) = 3.6875.` 
+
+Since we're interested in the starting point, we take the integer part (3) and multiply by the block size (64): `3 * 64 = 192.`
+- Use the first two octets from the original IP address (166.155), the calculated starting point for the third octet (192), and set the fourth octet to 0 (since we're calculating the network address).
+This gives us the network address: 166.155.192.0. 
+Usable IP range: `166.155.192.1 - 166.155.255.254`.
+
+
+
 
 
 
